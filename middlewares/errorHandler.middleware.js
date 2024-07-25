@@ -5,6 +5,7 @@ export const errorHandler = (error, req, res, next) => {
   };
 
   if (error.name === "ValidationError") {
+    console.log("ValidationError");
     customError.statusCode = 400;
     customError.message = Object.values(error.errors)
       .map((item) => item.message)
@@ -14,10 +15,7 @@ export const errorHandler = (error, req, res, next) => {
   // 11000 is an error code for duplicate entity
   if (error.code && error.code === 11000) {
     customError.statusCode = 400;
-    const duplicates = Object.keys(error.keyValue).map(
-      (key) => `${key} already exists`
-    );
-    customError.message = duplicates.join(", ");
+    customError.message = `${Object?.keys(error.keyValue)} already exists.`;
   }
 
   if (error.name === "CastError") {

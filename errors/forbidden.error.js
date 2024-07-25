@@ -1,4 +1,4 @@
-import { CustomAPIError } from "./customError.error";
+import { CustomAPIError } from "./customError.error.js";
 
 class ForbiddenError extends CustomAPIError {
   constructor(message) {
