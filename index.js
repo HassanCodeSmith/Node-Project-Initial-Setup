@@ -7,10 +7,10 @@ import https from "https";
 import http from "http";
 import cors from "cors";
 
-import { ConnectDb } from "./config/db.config.js";
-import { notFound } from "./middlewares/notFound.middleware.js";
-import { errorHandler } from "./middlewares/errorHandler.middleware.js";
-import { router } from "./routes/index.routes.js";
+import { ConnectDb } from "./src/config/db.config.js";
+import { notFound } from "./src/middlewares/notFound.middleware.js";
+import { errorHandler } from "./src/middlewares/errorHandler.middleware.js";
+import { router } from "./src/routes/index.routes.js";
 
 /** __________ Dot Env Configuration __________ */
 dotenv.config();
